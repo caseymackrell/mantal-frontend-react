@@ -1,0 +1,64 @@
+
+
+.CreateWorkoutContainer {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.createWorkout {
+    color: #1499C3;
+    background-color: white;
+    display: flex;
+    height: 80%;
+    width: 80%;
+
+}
+
+.workoutInput {
+    margin-top: 5px;
+}
+
+.workoutDescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(14, 14, 14);
+    width: 70vh;
+    height: 5vh;
+    margin-top: 30px;
+    color: #1499C3;
+    text-align: center;
+}
+
+.saveButton {
+    background-color: #1499C3;
+    color: #EAAA6F;
+    font-weight: 900;
+    font-size: x-large;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.saveWorkout {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exerciseButton {
+    background-color: #1499C3;
+    color: #EAAA6F;
+    font-weight: 900;
+    font-size: small;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-right: 5px;
+}

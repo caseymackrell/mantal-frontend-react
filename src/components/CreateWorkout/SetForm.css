@@ -1,0 +1,39 @@
+
+
+
+.repContainer {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgb(56, 56, 56);
+    width: 80%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    border-color: #EAAA6F;
+    border-width: 2px;
+    border-style: inset;
+    margin-bottom: 15px;
+}
+
+.setMainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    width: 30%;
+}
+
+.inputCon {
+    width: 60%;
+    margin-right: 50px;
+    margin-left: 50px;
+
+}
+
+.inputNum {
+    width: 40%;
+    text-align: center;
+}

@@ -3,12 +3,11 @@ import React from 'react'
 import LoginCode from '../login/logincode'
 
 function LoginPageConfirm() {
-  return (
-    <>
-    <LoginCode />
-    </>
-  )
+	return (
+		<>
+			<LoginCode />
+		</>
+	)
 }
-
 
 export default LoginPageConfirm

@@ -31,7 +31,7 @@
     padding: 20px;
 }
 
-input {
+.login-input-1 {
     border: none;
     border-bottom: 1px solid white;
     background-color: transparent;
@@ -43,6 +43,7 @@ input {
     font-size: 20px;
     padding-left: 10px;
     margin-top: 20px;
+    text-align: left;
 }
 
 .logo-1{

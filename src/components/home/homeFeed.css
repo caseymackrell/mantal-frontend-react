@@ -1,0 +1,40 @@
+
+
+.table {
+    background-color: rgb(14, 14, 14);
+    text-align: center;
+    height: 90%;
+    width: 80%;
+}
+
+.title {
+    text-align: center;
+}
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}
+
+.mainHomeContainer {
+    background-color: #000000;
+    height: 100vh;
+}
+
+.loadingPage {
+    background-color: #000000;
+    height: 100vh;
+}
+
+.pag {
+        background-color: rgb(134, 133, 133);
+}
+
+.workoutCard {
+    background-color: #000000;
+    color: #1499C3;
+    border-color: #EAAA6F;
+}

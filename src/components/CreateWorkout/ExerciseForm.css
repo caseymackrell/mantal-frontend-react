@@ -1,0 +1,42 @@
+.exerciseForm {
+    background-color: rgb(20, 20, 20);
+    margin-bottom: 10px;
+    color: #1499C3;
+    
+}
+
+.setContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.buttonContainer {
+        display: flex;
+        justify-content: center;
+}
+
+.setButton {
+            background-color: #1499C3;
+                color: #EAAA6F;
+                font-weight: 900;
+                font-size: small;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                margin-right: 5px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+}
+
+.exerciseName {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.nameInput {
+    display: flex;
+    justify-content: center;
+}

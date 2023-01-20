@@ -1,0 +1,39 @@
+.mainContainer {
+        flex: 1;
+        background-color: #000000;
+}
+
+
+.tableProfile {
+    height: 80%;
+    width: 80%;
+}
+
+.workoutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}
+
+.userName {
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 70px;
+    color: #1499C3;
+}
+
+.line {
+    margin-top: 20px;
+    background-color: white;
+    height: 2px;   
+    width: 95%;
+    margin-left: 45px;
+}
+
+.my-pagination {
+    background-color: rgb(134, 133, 133);
+    display: flex;
+    align-items: flex-end;
+}
