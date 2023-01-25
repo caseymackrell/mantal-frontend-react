@@ -4,14 +4,13 @@ import HomeFeed from '../home/homeFeed'
 import Navbar from '../Navbar/Navbar'
 
 function HomePage() {
-  return (
+	return (
 
-    <>
-    <Navbar />
-    <HomeFeed/>
-    </>
-  )
+		<>
+			<Navbar />
+			<HomeFeed/>
+		</>
+	)
 }
-
 
 export default HomePage

@@ -3,6 +3,7 @@ import './homeFeed.css'
 import React, { useState, useEffect } from 'react'
 import { Card, Table } from 'antd'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function HomeFeed() {
 	const [workouts, setWorkouts] = useState([])
@@ -14,6 +15,7 @@ function HomeFeed() {
 	// const workout = useSelector(state => state.currentWorkout)
 
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
 	const handleClick = (workoutId, index) => {
 		console.log(`You clicked on workout with id ${workoutId}`)
@@ -21,6 +23,7 @@ function HomeFeed() {
 			type: 'SET_WORKOUT',
 			payload: workoutId,
 		})
+		navigate('/workout')
 	}
 
 	const columns = [

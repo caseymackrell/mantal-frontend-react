@@ -75,7 +75,7 @@ function Profile() {
 				const { data } = await response.json()
 				console.log(data)
 				setUser(data)
-				const userId = data.userId
+				const userId = data._id
 				dispatch({
 					type: 'SET_ID',
 					payload: userId,

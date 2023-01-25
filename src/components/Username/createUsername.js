@@ -1,35 +1,29 @@
 /* eslint-disable max-len */
 import '../../App.css'
-import './logincode.css'
+import './createUsername.css'
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-function LoginCode() {
+function CreateUsername() {
 	const navigate = useNavigate()
-	const phone = useSelector(state => state.phoneNumber)
-	const [otp, setOTP] = useState('')
+	const [username, setUsername] = useState('')
 
 	const handleChange = (event) => {
 		const { value } = event.target
-		setOTP(value)
+		setUsername(value)
 	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		try {
-			const confirmRespone = await axios.post('http://localhost:3000/user/verify_code', { phone, otp })
-			const getUser = await axios.post('http://localhost:3000/user/profile', { phoneNumber: phone })
+			const confirmRespone = await axios.patch('http://localhost:3000/user', { username: username })
 			console.log(confirmRespone)
-			console.log(getUser.data.data.username)
-			const username = getUser.data.data.username
-			if (confirmRespone.data.data.token && username !== '') {
-				localStorage.setItem('jwt', confirmRespone.data.data.token)
+			if (confirmRespone.status === 200) {
 				navigate('/')
-				setOTP('')
-			} else {
-				navigate('/createUsername')
+				setUsername('')
+			} else if (confirmRespone.status === 409) {
+				alert('Username Already exists')
 			}
 		} catch (error) {
 			console.error(error)
@@ -49,13 +43,13 @@ function LoginCode() {
 					<div className='label-2'>
 						<label>
 							<div className='label'>
-                                Enter Code
+                                Enter Username
 							</div>
 							<input
 								className='login-input-2'
 								type='text'
 								name='otp'
-								value={otp}
+								value={username}
 								onChange={handleChange}
 							/>
 						</label>
@@ -67,4 +61,4 @@ function LoginCode() {
 	)
 }
 
-export default LoginCode
+export default CreateUsername

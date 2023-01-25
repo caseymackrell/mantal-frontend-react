@@ -1,0 +1,66 @@
+.topContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* This will make the top container take up the full height of the screen */
+}
+
+.main-container {
+    color: #1499C3;
+    min-height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(20, 20, 20);
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.exercises {
+    display: flex;
+    flex-direction: column;
+}
+
+.set-container {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    color: #EAAA6F;
+}
+
+.exercise-name {
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    background-color: rgb(83, 83, 83);
+    margin-top: 100px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    height: 300px;
+    justify-content: center;
+    border-radius: 10px;
+    border-color: #EAAA6F;
+    border-style:outset;
+    width: 900px;
+}
+
+.set-name {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    color: #1499C3;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.set-num {
+    color: #EAAA6F;
+    text-align: center;
+}
+
+.exercise-exerciseName {
+    margin-bottom: 30px;
+}

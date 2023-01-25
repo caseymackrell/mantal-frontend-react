@@ -6,6 +6,8 @@ import LoginPageConfirm from './components/pages/LoginPageConfirm'
 import ProfilePage from './components/pages/ProfilePage'
 import WorkoutPage from './components/pages/WorkoutPage'
 import CreateWorkoutPage from './components/pages/CreateWorkoutPage'
+import CreateUsername from './components/Username/createUsername'
+import CalendarPage from './components/pages/CalendarPage'
 
 function App() {
 	return (
@@ -17,7 +19,8 @@ function App() {
 				<Route path='/profile' element = {<ProfilePage />}/>
 				<Route path='/workout' element = {<WorkoutPage />}/>
 				<Route path='/createWorkout' element = {<CreateWorkoutPage />}/>
-
+				<Route path='/createUsername' element = {<CreateUsername />}/>
+				<Route path='/calendar' element = {<CalendarPage />}/>
 			</Routes>
 		</Router>
 

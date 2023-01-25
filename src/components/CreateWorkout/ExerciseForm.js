@@ -4,7 +4,7 @@ import './ExerciseForm.css'
 
 const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 	const [exerciseData, setExerciseData] = useState({
-		workoutName: exercise.name || '',
+		exerciseName: exercise.name || '',
 		sets: exercise.sets || [{
 			setNum: '',
 			reps: '',
@@ -28,6 +28,7 @@ const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 			sets: newSets,
 		})
 		onChange(index, exerciseData)
+		console.log(exerciseData)
 	}
 
 	const handleDeleteSet = setIndex => {
@@ -56,8 +57,9 @@ const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 				</div>
 				<div className='nameInput'>
 					<input
+						className='inputStyle'
 						type='text'
-						name='name'
+						name='exerciseName'
 						value={exerciseData.name}
 						onChange={handleChange}
 						required

@@ -1,10 +1,10 @@
 
-
+body {
+    background-color: black;
+}
 .CreateWorkoutContainer {
     height: 100vh;
     background-color: black;
-    display: flex;
-    justify-content: center;
 }
 
 .createWorkout {
@@ -13,6 +13,8 @@
     display: flex;
     height: 80%;
     width: 80%;
+    overflow: hidden;
+    justify-content: space-between;
 
 }
 
@@ -24,24 +26,30 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    /* change flex direction to column /
+align-items: center; / align items to center /
+justify-content: space-between; / evenly space items */
     background-color: rgb(14, 14, 14);
-    width: 70vh;
+    width: 80vh;
     height: 5vh;
-    margin-top: 30px;
+    margin-top: 70px;
     color: #1499C3;
     text-align: center;
+    padding-top: 10px;
 }
 
 .saveButton {
     background-color: #1499C3;
-    color: #EAAA6F;
+    color: white;
     font-weight: 900;
     font-size: x-large;
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 1%;
     padding-bottom: 1%;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    border-color: #EAAA6F;
 }
 
 .saveWorkout {
@@ -53,7 +61,7 @@
 
 .exerciseButton {
     background-color: #1499C3;
-    color: #EAAA6F;
+    color: white;
     font-weight: 900;
     font-size: small;
     padding-left: 20px;
@@ -61,4 +69,33 @@
     padding-top: 1%;
     padding-bottom: 1%;
     margin-right: 5px;
+    border-radius: 5px;
+    border-color: #EAAA6F;
+}
+
+.inputStyle {
+    border-radius: 8px;
+    padding-left: 4px;
+    text-align: center;
+}
+
+
+.switchContainer {
+    position: absolute;
+    /* position the container absolutely */
+    top: 100px;
+    /* move the container 10px from the top */
+    z-index: 1;
+    /* make sure the switch is above other elements */
+    /* add a background color for visibility */
+}
+
+.topContainer {
+    display: flex;
+}
+
+.workoutSwitch {
+    font-weight: bold;
+    width: 100px;
+    background-color: #EAAA6F;
 }

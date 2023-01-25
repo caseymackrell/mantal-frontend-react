@@ -36,4 +36,6 @@ label {
 .inputNum {
     width: 40%;
     text-align: center;
+    border-radius: 8px;
+    padding-left: 5px;
 }
