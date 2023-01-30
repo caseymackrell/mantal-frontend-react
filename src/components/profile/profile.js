@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Card, Table } from 'antd'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Profile() {
 	const [user, setUser] = useState({})
@@ -61,19 +62,20 @@ function Profile() {
 	]
 
 	useEffect(() => {
-		(async () => {
+		const fetchUserProfile = async () => {
 			try {
 				setLoading(true)
+				const token = localStorage.getItem('jwt')
+				const headers = {
+					Authorization: `Bearer ${token}`,
+					'Content-Type': 'application/json',
+				}
 				const phoneNumber = '+14436796378'
 				const body = JSON.stringify({ phoneNumber })
-				console.log(body)
-				const response = await fetch('http://localhost:3000/user/profile', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body,
+				const response = await axios.post('http://localhost:3000/user/profile', body, {
+					headers,
 				})
-				const { data } = await response.json()
-				console.log(data)
+				const { data } = response.data
 				setUser(data)
 				const userId = data._id
 				dispatch({
@@ -85,32 +87,36 @@ function Profile() {
 				setLoading(false)
 				console.log(err)
 			}
-		})()
+		}
+		fetchUserProfile()
 	}, [])
 
 	useEffect(() => {
-		(async () => {
+		const fetchWorkouts = async () => {
 			try {
 				if (user.workouts) {
 					const workoutIds = user.workouts
-					const workoutPromises = workoutIds.map((workoutId) =>
-						fetch(`http://localhost:3000/workout/${workoutId}`)
-							.then(res => res.json())
-					)
-					const workoutData = (await Promise.all(workoutPromises)).map(({ data }) => data)
-					// setWorkoutData(workoutData);
-					console.log(workoutData)
-					setLoading(false)
+					const promises = workoutIds.map(async (workoutId) => {
+						const token = localStorage.getItem('jwt')
+						const headers = { Authorization: `Bearer ${token}` }
+						const response = await axios.get(
+							`http://localhost:3000/workout/${workoutId}`,
+							{ headers }
+						)
+						return response.data
+					})
+					const workoutData = (await Promise.all(promises)).map(({ data }) => data)
 					setWorkoutData(workoutData)
+					setLoading(false)
 				}
 			} catch (err) {
 				setError(err)
 				setLoading(false)
 				console.log(err)
 			}
-		})()
+		}
+		fetchWorkouts()
 	}, [user])
-
 	const handleClick = (workoutId, index) => {
 		console.log(`You clicked on workout with id ${workoutId}`)
 		dispatch({

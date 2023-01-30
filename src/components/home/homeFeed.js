@@ -86,7 +86,9 @@ function HomeFeed() {
 		async function fetchData() {
 			try {
 				setLoading(true)
-				const response = await fetch('http://localhost:3000/workout')
+				const token = localStorage.getItem('jwt')
+				const headers = { Authorization: `Bearer ${token}` }
+				const response = await fetch('http://localhost:3000/workout', { headers })
 				const { data: { data } } = await response.json()
 				console.log(data)
 				setWorkouts(data)

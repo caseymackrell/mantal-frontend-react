@@ -13,7 +13,7 @@ const SetForm = ({ set, index, onChange }) => {
 			...setData,
 			[event.target.name]: event.target.value,
 		})
-		onChange(index, setData)
+		onChange(index, { ...setData, [event.target.name]: event.target.value })
 	}
 
 	return (

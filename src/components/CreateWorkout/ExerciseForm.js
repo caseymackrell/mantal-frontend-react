@@ -4,7 +4,7 @@ import './ExerciseForm.css'
 
 const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 	const [exerciseData, setExerciseData] = useState({
-		exerciseName: exercise.name || '',
+		exercise: exercise.name || '',
 		sets: exercise.sets || [{
 			setNum: '',
 			reps: '',
@@ -17,7 +17,7 @@ const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 			...exerciseData,
 			[event.target.name]: event.target.value,
 		})
-		onChange(index, exerciseData)
+		onChange(index, { ...exerciseData })
 	}
 
 	const handleSetChange = (setIndex, setData) => {
@@ -27,7 +27,7 @@ const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 			...exerciseData,
 			sets: newSets,
 		})
-		onChange(index, exerciseData)
+		onChange(index, { ...exerciseData })
 		console.log(exerciseData)
 	}
 
@@ -38,7 +38,7 @@ const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 			...exerciseData,
 			sets: newSets,
 		})
-		onChange(index, exerciseData)
+		onChange(index, { ...exerciseData })
 	}
 
 	const handleAddSet = () => {
@@ -46,7 +46,7 @@ const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 			...exerciseData,
 			sets: [...exerciseData.sets, {}],
 		})
-		onChange(index, exerciseData)
+		onChange(index, { ...exerciseData })
 	}
 
 	return (
@@ -59,8 +59,8 @@ const ExerciseForm = ({ exercise = {}, index, onChange }) => {
 					<input
 						className='inputStyle'
 						type='text'
-						name='exerciseName'
-						value={exerciseData.name}
+						name='exercise'
+						value={exercise.name}
 						onChange={handleChange}
 						required
 					/>
